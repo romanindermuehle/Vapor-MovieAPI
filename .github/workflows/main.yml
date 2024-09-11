@@ -32,25 +32,3 @@ jobs:
           context: ./
           push: true
           tags: ghcr.io/romanindermuehle/movies-app:latest
-
-
-  deploy:
-    needs: build
-    name: deploy image
-    runs-on: ubuntu-latest
-    env:
-      URFAVE_CLI_TRACING: on
-
-    steps:
-      - name: deploying
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          debug: true
-          script: |
-            cd ${{ secrets.WORK_DIR }}
-            echo ${{ secrets.GHCR_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-            docker compose pull app
-            docker compose up -d app
