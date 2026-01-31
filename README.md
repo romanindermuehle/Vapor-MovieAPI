@@ -18,6 +18,7 @@ Once confirmed, you can begin making requests to the API endpoints. However, you
 Your request (POST):
 `http://127.0.0.1:8080/api/movies`
 
+```
 Body:
 	{
 	  "title": "Avatar",
@@ -30,13 +31,14 @@ The response could look like this:
 	  "year": 2009,
 	  "title": "Avatar"
 	}
-
+```
 
 #### Get all movies
 Your request(GET):
 `http://127.0.0.1:8080/api/movies` 
 
 The response could look like this:
+```
 	[
 	  {
 		"id": "B4DD8F9A-8A70-4725-995D-3B9DC11134AE",
@@ -49,6 +51,7 @@ The response could look like this:
 		"year": 2023
 	  }
 	]
+```
 
 
 #### Get a movie by ID
@@ -56,40 +59,48 @@ Your request(GET):
 `[http://127.0.0.1:8080/api/movies] http://127.0.0.1:8080/api/movies/B4DD8F9A-8A70-4725-995D-3B9DC11134AE ` 
 
 The response could look like this:
+```
 	{
 	  "id": "B4DD8F9A-8A70-4725-995D-3B9DC11134AE",
 	  "year": 2010,
 	  "title": "Batman Begins"
 	}
+```
 
 #### Delete a movie
 Your request (Delete):
 `http://127.0.0.1:8080/api/movies/3233E368-356C-41CD-8C0A-95DC8F5B4AB5 `
 
 The response could look like this (the channel which you deleted):
+```
 	{
 	  "id": "3233E368-356C-41CD-8C0A-95DC8F5B4AB5",
 	  "year": 2023,
 	  "title": "Minions"
 	}
+```
 
 
 #### Update the movie
 Your request(PUT):
 `http://127.0.0.1:8080/api/movies/C5A35A34-CD83-458D-A362-A1D4A382CC34`
 
+```
 Body:
 	{
 	  "title": "Despicable Me 4",
 	  "year": 2024
 	}
+```
 
 The response could look like this (the channel which you updated):
+```
 	{
 	  "id": "C5A35A34-CD83-458D-A362-A1D4A382CC34",
 	  "year": 2024,
 	  "title": "Despicable Me 4"
 	}
+```
 
 [1]:	https://www.docker.com/products/docker-desktop/
 [2]:	https://proxyman.io/
